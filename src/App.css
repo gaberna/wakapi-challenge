@@ -2,6 +2,67 @@
   text-align: center;
 }
 
+.header {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e9ecef;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.country-selector {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.register-button {
+  display: grid!important
+}
+
+.more-information {
+  padding-top: 5%;
+}
+
+.empty-list {
+  text-align: center;
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e9ecef;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  width: 100%;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.terms-policy {
+  justify-content: flex-end;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
