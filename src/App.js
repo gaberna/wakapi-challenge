@@ -37,6 +37,7 @@ function App() {
   const [usersList, setUserList] = useState("");
   const [allEmpty, setAllEmpty] = useState(false);
 
+
   const resetForm = () => {
     setUserFullName("");
     setIsValidName(false);
@@ -72,15 +73,15 @@ function App() {
     return re.test(userFullName);
   }
 
+  const onBirthdayChange = e => {
+    setUserBirthday(e.target.value);
+    setIsValidBirthday(validateBirthday(userBirthday));
+  }
+
   const validateBirthday = (userBirthday) => {
     // const re = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
     const re = /^.{2,9}$/;
     return re.test(userBirthday);
-  }
-
-  const onBirthdayChange = e => {
-    setUserBirthday(e.target.value);
-    setIsValidBirthday(validateBirthday(userBirthday));
   }
 
   const onCountrySelect = value => {
@@ -93,12 +94,12 @@ function App() {
   }
 
   return (
-    <Container>
+    <Container fluid>
       <Header />
-      <Row>
+      <Row className="content">
         <Col xs={12} md={12} lg={4}>
           <Form>
-            <h1>Register Form</h1>
+            <h2>Register Form</h2>
             <hr />
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Full Name</Form.Label>
@@ -137,13 +138,13 @@ function App() {
           }
           <div className="register-button">
             <Button variant="primary" type="button" onClick={handleClick}>
-              Register!
+              Sign up!
             </Button>
 
 
           </div>
         </Col>
-        <Col xs={12} md={12} lg={8}>
+        <Col xs={12} md={12} lg={8} className="scroll-col">
           <UserList data={usersList} />
         </Col>
       </Row>

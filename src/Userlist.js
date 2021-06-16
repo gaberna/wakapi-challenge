@@ -1,6 +1,8 @@
 import FlatList from 'flatlist-react';
 import boxLogo from './utils/open-box.png';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import './App.css';
 
 const UserList = (props) => {
@@ -9,11 +11,14 @@ const UserList = (props) => {
 
     const renderUser = (user, idx) => {
         return (
-            <div style={{ padding: '0.5rem' }} key={idx} >
+            <div className='user-card' key={idx} >
                 <Card border="light" style={{ width: 'auto' }}>
-                    <Card.Header>{user.fullName} {user.country} </Card.Header>
+                    <Card.Header>{user.fullName}</Card.Header>
                     <Card.Body>
-                        <Card.Title>Birthday: {user.birthday}</Card.Title>
+                        <Row>
+                            <Col><Card.Text>Birthday: {user.birthday} </Card.Text></Col>
+                            <Col><Card.Text> From: {user.country} </Card.Text></Col>
+                        </Row>
                     </Card.Body>
                 </Card>
             </div>
@@ -22,15 +27,14 @@ const UserList = (props) => {
 
     const blank = () => (
         <div className='empty-list'>
-            <h4>There aren't registered users yet!</h4>
-            <img alt="" src={boxLogo} width="32" height="32" />
-
+            <h4 style={{ color: '#bfc3c7', paddingBottom: '4%', }}>There aren't registered users yet!</h4>
+            <img alt="" src={boxLogo} width="100rem" height="100rem" />
         </div>
     );
     // className="App-logo"
     return (
         <div>
-            <h1>Registered Users</h1>
+            <h2>Registered Users</h2>
             <hr />
             <FlatList
                 list={data}

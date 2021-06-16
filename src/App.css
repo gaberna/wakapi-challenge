@@ -4,16 +4,15 @@
 
 .header {
   text-align: center;
-  margin-top: 1rem;
   padding: 1rem;
   background-color: #e9ecef;
   position: sticky;
   bottom: 0;
   left: 0;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   width: 100%;
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.09);
 }
 
 .country-selector {
@@ -32,6 +31,10 @@
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.content {
+  padding: 2%;
+}
+
 .register-button {
   display: grid!important
 }
@@ -42,6 +45,7 @@
 
 .empty-list {
   text-align: center;
+  padding: 10%;
 }
 
 .footer {
@@ -57,20 +61,29 @@
   box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
+.scroll-col {
+  overflow-y: scroll;
+}
 
+.user-card {
+  padding: 0.5rem;
+}
 
 .terms-policy {
   justify-content: flex-end;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 5vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+  .user-card{ 
+    animation: user-card-appear 1s linear;
   }
 }
 
@@ -95,5 +108,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes user-card-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
   }
 }
