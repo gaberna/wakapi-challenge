@@ -1,6 +1,5 @@
 import './App.css';
 import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -13,18 +12,6 @@ import { CountryDropdown } from 'react-country-region-selector';
 import React, { useState } from "react";
 
 
-
-const people = [
-  { firstName: 'Elson', lastName: 'Correia', country: 'Argentina' },
-  { firstName: 'John', lastName: 'Doe', country: 'Argentina' },
-  { firstName: 'Jane', lastName: 'Doe', country: 'Argentina' },
-  { firstName: 'Maria', lastName: 'Carvalho', country: 'Argentina' },
-  { firstName: 'Kelly', lastName: 'Correia', country: 'Argentina' },
-  { firstName: 'Don', lastName: 'Quichote', country: 'Argentina' },
-  { firstName: 'Marcus', lastName: 'Correia', country: 'Argentina' },
-  { firstName: 'Bruno', lastName: 'Gonzales', country: 'Argentina' },
-  { firstName: 'Alonzo', lastName: 'Correia', country: 'Argentina' }
-]
 
 function App() {
 
@@ -53,14 +40,26 @@ function App() {
     if (userFullName === "" || userBirthday === "" || userCountry === "") {
       setAllEmpty(true);
     } else {
+
+      const formatedDate = formatDate(userBirthday);
+
       const newRegister = [{
         fullName: userFullName,
-        birthday: userBirthday,
+        birthday: formatedDate,
         country: userCountry,
       }, ...usersList]
       resetForm();
       setUserList(newRegister);
     }
+  }
+
+  const formatDate = date => {
+    const day = date.slice(8, 10);
+    const month = date.slice(5, 7);
+    const year = date.slice(0, 4);
+    const res = day + '/' + month + '/' + year
+    console.log("dateFroamted;", res);
+    return res
   }
 
   const onNameChange = e => {
@@ -94,15 +93,15 @@ function App() {
   }
 
   return (
-    <Container fluid>
+    <Container className="background" fluid>
       <Header />
       <Row className="content">
-        <Col xs={12} md={12} lg={4}>
+        <Col xs={12} md={12} lg={4} className="user-grid">
           <Form>
-            <h2>Register Form</h2>
+            <h2 className="h2-custom">Register Form</h2>
             <hr />
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Full Name</Form.Label>
+              <Form.Label className="label-custom">Full Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Ex. John Doe"
@@ -112,7 +111,7 @@ function App() {
               />
             </Form.Group>
             <Form.Group controlId="formBirthDate">
-              <Form.Label>Birth Date</Form.Label>
+              <Form.Label className="label-custom">Birth Date</Form.Label>
               <Form.Control
                 type="date"
                 placeholder="dd/mm/aaaa"
@@ -122,8 +121,10 @@ function App() {
               />
             </Form.Group>
             <Form.Group controlId="formCountryDropdown">
-              <Form.Label>Country</Form.Label>
+              <Form.Label className="label-custom">Country</Form.Label>
               <CountryDropdown
+                name="dropdown"
+                id="dropdown"
                 className="country-selector"
                 value={userCountry}
                 onChange={onCountrySelect}
@@ -137,14 +138,12 @@ function App() {
             </Alert>
           }
           <div className="register-button">
-            <Button variant="primary" type="button" onClick={handleClick}>
+            <Button className="button-custom" variant="primary" type="button" onClick={handleClick}>
               Sign up!
             </Button>
-
-
           </div>
         </Col>
-        <Col xs={12} md={12} lg={8} className="scroll-col">
+        <Col xs={12} md={12} lg={8} className="user-grid">
           <UserList data={usersList} />
         </Col>
       </Row>

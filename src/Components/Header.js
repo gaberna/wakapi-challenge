@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 const Header = () => (
     <div className="header">
         <Container>
-            <h1>Wakapi Challenge!</h1>
+            <h1 >Wakapi Challenge!</h1>
             <p>
                 This form registers users and displays them in a list.
             </p>

@@ -1,18 +1,54 @@
+.background {
+  background-color: #f5f5f5;
+}
+
 .App {
   text-align: center;
 }
 
 .header {
+  color: #ebf0f4;
   text-align: center;
   padding: 1rem;
-  background-color: #e9ecef;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);  
   position: sticky;
   bottom: 0;
   left: 0;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   width: 100%;
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.09);
+  box-shadow:  1px 6px 8px -1px rgb(0 0 0 / 20%);
+}
+
+.h2-custom {
+  color: #0f395C
+}
+
+.h4-custom {
+  color: #7994ac; 
+  padding-bottom: 4%;
+}
+
+.label-custom {
+  color: #042947
+}
+
+.button-custom {
+  color: #fff;
+  background-color: #0093E9;
+  border-color: #0093E9;
+  margin-bottom: 2%;
+}
+
+btn-primary:hover {
+  color: #fff;
+  background-color: #80D0C7;
+  border-color: #80D0C7;
+}
+
+.link-custom {
+  color: #ebf0f4;
 }
 
 .country-selector {
@@ -36,7 +72,8 @@
 }
 
 .register-button {
-  display: grid!important
+  display: grid!important;
+  padding-bottom: 2,5%;
 }
 
 .more-information {
@@ -46,32 +83,43 @@
 .empty-list {
   text-align: center;
   padding: 10%;
+  
 }
 
 .footer {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #e9ecef;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);  
   position: sticky;
   bottom: 0;
   left: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   width: 100%;
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px -6px 8px -1px rgb(0 0 0 / 20%);
+  
 }
 
-.scroll-col {
-  overflow-y: scroll;
+
+.card_ {
+  padding: 0.5rem;
 }
 
 .user-card {
-  padding: 0.5rem;
+  width: auto;
+  background-color: #fff8dc;
+  color: #0f395c;
+  box-shadow: 6px 4px 9px 2px rgb(0 0 0 / 10%);
 }
 
 .terms-policy {
   justify-content: flex-end;
 }
+.footer-btns-l{
+  float: right!important;
+}
+
 
 .App-logo {
   height: 5vmin;
@@ -82,8 +130,13 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-  .user-card{ 
+
+  .user-card { 
     animation: user-card-appear 1s linear;
+  }
+
+  .box-fade {
+    animation: box-appear 500ms linear;
   }
 }
 
@@ -118,4 +171,35 @@
   to {
     opacity: 100;
   }
+}
+
+@keyframes box-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 80;
+  }
+}
+
+@media only screen and (max-width: 766px) {
+
+.terms-policy {
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+
+.footer-btns{
+  display: flex;
+  justify-content: center;
+}
+
+}
+
+@media only screen and (max-width: 990px) {
+
+.user-grid {
+  margin-top: 3%;
+}
+
 }

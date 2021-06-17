@@ -12,20 +12,23 @@ const Footer = () => (
   <div className="footer">
     <Container>
       <Row className="terms-policy">
-        <Col>
-          <div>
-            <p>Desing & Dev:
-              <a href="https://github.com/gaberna" target="_blank" rel="noopener noreferrer">
-                Gabriel Attorri
-              </a>
-            </p>
+        <Col xs={12} sm={6} md={6} lg={6}>
+          <div className="footer-btns">
+            <Button className="link-custom" size="sm" variant="link"
+              href="https://github.com/gaberna"
+              target="_blank"
+            >
+              Des&Dev: Gabriel Attorri
+            </Button>
+            <img src={reactLogo} className="App-logo" alt="logo" />
           </div>
         </Col>
-        <Col >
-          <div className='float-right'>
+
+        <Col xs={12} sm={6} md={6} lg={6}>
+          <div className="footer-btns footer-btns-l">
             <Terms />
             <Policy />
-            <img src={reactLogo} className="App-logo" alt="logo" />
+
           </div>
         </Col>
       </Row>
