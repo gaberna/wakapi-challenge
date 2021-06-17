@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Wakapi-Challenge
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app). Incluye librerías propias de ReacJS para estilos y componentes.  
 
